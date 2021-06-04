@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Computer Architecture</title>
+  </head>
+  <body>
+    <style>
+      p {
+        font-size: 20px;
+        font-style: italic;
+      }
+      h1 {
+        text-align: center;
+      }
+      li {
+        font-size: 20px;
+      }
+    </style>
+    <h1>Computer Architecture</h1>
+    <h2>An Introduction to Computer Architecture</h2>
+    <p>
+      Each machine has its own, unique personality which probably could be
+      defined as the intuitive sum total of everything you know and feel about
+      it. This personality constantly changes, usually for the worse, but
+      sometimes surprisingly for the better...
+      <small
+        >—Robert M. Pirsig, Zen and the Art of Motorcycle Maintenance</small
+      >
+      This book is about designing and building specialized computers. We all
+      know what a computer is. It’s that box that sits on your desk, quietly
+      purring away (or rattling if the fan is shot), running your programs and
+      regularly crashing (if you’re not running some variety of Unix). Inside
+      that box is the electronics that runs your software, stores your
+      information, and connects you to the world. It’s all about processing
+      information. Designing a computer, therefore, is about designing a machine
+      that holds and manipulates data. Computer systems fall into essentially
+      two separate categories. The first, and most obvious, is that of the
+      desktop computer. When you say “computer” to someone, this is the machine
+      that usually comes to her mind. The second type of computer is the
+      embedded computer, a computer that is integrated into another system for
+      the purposes of control and/or monitoring. Embedded computers are far more
+      numerous than desktop systems, but far less obvious. Ask the average
+      person how many computers he has in his home, and he might reply that he
+      has one or two. In fact, he may have 30 or more, hidden inside his TVs,
+      VCRs, DVD players, remote controls, washing machines, cell phones, air
+      conditioners, game consoles, ovens, toys, and a host of other devices. In
+      this chapter, we’ll look at computer architecture in general. This is
+      applicable to both embedded and desktop computers, because the primary
+      difference between an embedded machine and a general-purpose computer is
+      its application. The basic principles of operation and the underlying
+      architectures are fundamentally the same. Both have a processor, memory,
+      and often several forms of input and output. The primary difference lies
+      in their intended use, and this is reflected in the system design and
+      their software. Desktop computers can run a variety of application
+      programs, with system resources orchestrated by an operating system. By
+      running different application programs, the functionality of the desktop
+      computer is changed. One moment, it may be used as a word processor; the
+      next it is an MP3 player or a database client. Which software is loaded
+      and run is under user control. In contrast, the embedded computer is
+      normally dedicated to a specific task. In many cases, an embedded system
+      is used to replace application-specific electronics. The advantage of
+      using an embedded microprocessor over dedicated electronics is that the
+      functionality of the system is determined by the software, not the
+      hardware. This makes the embedded system easier to produce, and much
+      easier to evolve, than a complicated circuit. The embedded system
+      typically has one application and one application only, which is
+      permanently running. The embedded computer may or may not have an
+      operating system, and rarely does it provide the user with the ability to
+      arbitrarily install new software. The software is normally contained in
+      the system’s nonvolatile memory, unlike a desktop computer where the
+      nonvolatile memory contains boot software and (maybe) low-level drivers
+      only. Embedded hardware is often much simpler than a desktop system, but
+      it can also be far more complex too. An embedded computer may be
+      implemented in a single chip with just a few support components, and its
+      purpose may be as crude as a controller for a garden-watering system.
+      Alternatively, the embedded computer may be a 150-processor, distributed
+      parallel machine responsible for all the flight and control systems of a
+      commercial jet. As diverse as embedded hardware may be, the underlying
+      principles of design are the same.
+    </p>
+    <h2>Concepts</h2>
+    <p>
+      Let’s start at the beginning. In essence, a computer is a machine designed
+      to process, store, and retrieve data. Data may be numbers in a
+      spreadsheet, characters of text in a document, dots of color in an image,
+      waveforms of sound, or the state of some system, such as an air
+      conditioner or a CD player. All data is stored in the computer as numbers.
+      It’s easy to forget this when we’re deep in C code, contemplating complex
+      algorithms and data structures. The computer manipulates the data by
+      performing operations on the numbers. Displaying an image on a screen is
+      accomplished by moving an array of numbers to the video memory, each
+      number representing a pixel of color. To play an MP3 audio file, the
+      computer reads an array of numbers from disk and into memory, manipulates
+      those numbers to convert the compressed audio data into raw audio data,
+      and then outputs the new set of numbers (the raw audio data) to the audio
+      chip. Everything that a computer does, from web browsing to printing,
+      involves moving and processing numbers. The electronics of a computer is
+      nothing more than a system designed to hold, move, and change numbers. A
+      computer system is composed of many parts, both hardware and software. At
+      the heart of the computer is the processor, the hardware that executes the
+      computer programs. The computer also has memory, often several different
+      types in one system. The memory is used to store programs while the
+      processor is running them, as well as store the data that the programs are
+      manipulating. The computer also has devices for storing data, or
+      exchanging data with the outside world. These may allow the input of text
+      via a keyboard, the display of information on a screen, or the movement of
+      programs and data to or from a disk drive. The software controls the
+      operation and functionality of the computer. There are many “layers” of
+      software in the computer. Typically, a given layer will only interact with
+      the layers immediately above or below it.
+    </p>
+    <img src="Images/fig 1.png" alt="Software layers" />
+    <p>
+      At the lowest level, there are programs that are run by the processor when
+      the computer first powers up. These programs initialize the other hardware
+      subsystems to a known state and configure the computer for correct
+      operation. This software, because it is permanently stored in the
+      computer’s memory, is known as firmware . The bootloader is located in the
+      firmware. The bootloader is a special program run by the processor that
+      reads the operating system from disk (or nonvolatile memory or network
+      interface) and places it in memory so that the processor may then run it.
+      The bootloader is present in desktop computers and workstations, and may
+      be present in some embedded computers. Above the firmware, the operating
+      system controls the operation of the computer. It organizes the use of
+      memory and controls devices such as the keyboard, mouse, screen, disk
+      drives, and so on. It is also the software that often provides an
+      interface to the user, enabling her to run application programs and access
+      her files on disk. The operating system typically provides a set of
+      software tools for application programs, providing a mechanism by which
+      they too can access the screen, disk drives, and so on. Not all embedded
+      systems use or even need an operating system. Often, an embedded system
+      will simply run code dedicated to its task, and the presence of an
+      operating system is overkill. In other instances, such as network routers,
+      an operating system provides necessary software integration and greatly
+      simplifies the development process. Whether an operating system is needed
+      and useful really depends on the intended purpose of the embedded computer
+      and, to a lesser degree, on the preference of the designer. At the highest
+      level, the application software constitutes the programs that provide the
+      functionality of the computer. Everything below the application is
+      considered system software . For embedded computers, the boundary between
+      application and system software is often blurred. This reflects the
+      underlying principle in embedded design that a system should be designed
+      to achieve its objective in as simple and straightforward a manner as
+      possible.
+    </p>
+    <p>We will talk separetly about each of the following computer parts:</p>
+    <ul>
+      <li>
+        <a href="CPU.html" target="_blank">CPU </a>
+      </li>
+      <li>
+        <a href="GPU.html" target="_blank">GPU </a>
+      </li>
+      <li>
+        <a href="motherboard.html" target="_blank">Motherboard </a>
+      </li>
+      <li>
+        <a href="RAM.html" target="_blank">RAM </a>
+      </li>
+    </ul>
+  </body>
+</html>

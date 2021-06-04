@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Computer Architecture</title>
+  </head>
+  <body>
+    <style>
+      p {
+        font-size: 20px;
+        font-style: italic;
+      }
+      #image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+    <h1>GPU</h1>
+    <h2>What is Graphics processing unit</h2>
+    <p>
+      A graphics processing unit (GPU) is a specialized electronic circuit
+      designed to rapidly manipulate and alter memory to accelerate the creation
+      of images in a frame buffer intended for output to a display device. GPUs
+      are used in embedded systems, mobile phones, personal computers,
+      workstations, and game consoles. Modern GPUs are very efficient at
+      manipulating computer graphics and image processing. Their highly parallel
+      structure makes them more efficient than general-purpose central
+      processing units (CPUs) for algorithms that process large blocks of data
+      in parallel. In a personal computer, a GPU can be present on a video card
+      or embedded on the motherboard. In certain CPUs, they are embedded on the
+      CPU die. In the 1970s, the term "GPU" originally stood for graphics
+      processor unit and described a programmable processing unit independently
+      working from the CPU and responsible for graphics manipulation and output.
+      Later, in 1994, Sony used the term (now standing for graphics processing
+      unit) in reference to the PlayStation console's Toshiba-designed Sony GPU
+      in 1994. The term was popularized by Nvidia in 1999, who marketed the
+      GeForce 256 as "the world's first GPU". It was presented as a "single-chip
+      processor with integrated transform, lighting, triangle setup/clipping,
+      and rendering engines". Rival ATI Technologies coined the term "visual
+      processing unit" or VPU with the release of the Radeon 9700 in 2002.
+    </p>
+    <h2>GPU companies</h2>
+    <p>
+      Many companies have produced GPUs under a number of brand names. In 2009,
+      Intel, Nvidia and AMD/ATI were the market share leaders, with 49.4%, 27.8%
+      and 20.6% market share respectively. However, those numbers include
+      Intel's integrated graphics solutions as GPUs. Not counting those, Nvidia
+      and AMD control nearly 100% of the market as of 2018. Their respective
+      market shares are 66% and 33%. In addition, S3 Graphics and Matrox produce
+      GPUs. Modern smartphones also use mostly Adreno GPUs from Qualcomm,
+      PowerVR GPUs from Imagination Technologies and Mali GPUs from ARM.
+    </p>
+    <h2>GPU accelerated video decoding and encoding</h2>
+    <p>
+      Most GPUs made since 1995 support the YUV color space and hardware
+      overlays, important for digital video playback, and many GPUs made since
+      2000 also support MPEG primitives such as motion compensation and iDCT.
+      This process of hardware accelerated video decoding, where portions of the
+      video decoding process and video post-processing are offloaded to the GPU
+      hardware, is commonly referred to as "GPU accelerated video decoding",
+      "GPU assisted video decoding", "GPU hardware accelerated video decoding"
+      or "GPU hardware assisted video decoding". More recent graphics cards even
+      decode high-definition video on the card, offloading the central
+      processing unit. The most common APIs for GPU accelerated video decoding
+      are DxVA for Microsoft Windows operating system and VDPAU, VAAPI, XvMC,
+      and XvBA for Linux-based and UNIX-like operating systems. All except XvMC
+      are capable of decoding videos encoded with MPEG-1, MPEG-2, MPEG-4 ASP
+      (MPEG-4 Part 2), MPEG-4 AVC (H.264 / DivX 6), VC-1, WMV3/WMV9, Xvid /
+      OpenDivX (DivX 4), and DivX 5 codecs, while XvMC is only capable of
+      decoding MPEG-1 and MPEG-2.
+    </p>
+    <h2>Dedicated graphics cards</h2>
+    <p>
+      The GPUs of the most powerful class typically interface with the
+      motherboard by means of an expansion slot such as PCI Express (PCIe) or
+      Accelerated Graphics Port (AGP) and can usually be replaced or upgraded
+      with relative ease, assuming the motherboard is capable of supporting the
+      upgrade. A few graphics cards still use Peripheral Component Interconnect
+      (PCI) slots, but their bandwidth is so limited that they are generally
+      used only when a PCIe or AGP slot is not available. A dedicated GPU is not
+      necessarily removable, nor does it necessarily interface with the
+      motherboard in a standard fashion. The term "dedicated" refers to the fact
+      that dedicated graphics cards have RAM that is dedicated to the card's
+      use, not to the fact that most dedicated GPUs are removable. Further, this
+      RAM is usually specially selected for the expected serial workload of the
+      graphics card (see GDDR). Sometimes, systems with dedicated, discrete GPUs
+      were called "DIS" systems, as opposed to "UMA" systems (see next section).
+      Dedicated GPUs for portable computers are most commonly interfaced through
+      a non-standard and often proprietary slot due to size and weight
+      constraints. Such ports may still be considered PCIe or AGP in terms of
+      their logical host interface, even if they are not physically
+      interchangeable with their counterparts. Technologies such as SLI and
+      NVLink by Nvidia and CrossFire by AMD allow multiple GPUs to draw images
+      simultaneously for a single screen, increasing the processing power
+      available for graphics. These technologies, however, are increasingly
+      uncommon, as most games do not fully utilize multiple GPUs, as most users
+      cannot afford them. Multiple GPUs are still used on supercomputers (like
+      in Summit), on workstations to accelerate video (processing multiple
+      videos at once) and 3D rendering, for VFX and for simulations, and in AI
+      to expedite training, as is the case with Nvidia's lineup of DGX
+      workstations and servers and Tesla GPUs and Intel's upcoming Ponte Vecchio
+      GPUs.
+    </p>
+    <h2>Integrated graphics processing unit</h2>
+    <img
+      src="Images/IBM_VGA_90X8941_on_PS55.jpg"
+      alt="VGA section on the motherboard"
+      id="image"
+    />
+    <p>
+      Integrated graphics processing unit (IGPU), Integrated graphics, shared
+      graphics solutions, integrated graphics processors (IGP) or unified memory
+      architecture (UMA) utilize a portion of a computer's system RAM rather
+      than dedicated graphics memory. IGPs can be integrated onto the
+      motherboard as part of the (northbridge) chipset, or on the same die
+      (integrated circuit) with the CPU (like AMD APU or Intel HD Graphics). On
+      certain motherboards, AMD's IGPs can use dedicated sideport[clarification
+      needed] memory. This is a separate fixed block of high performance memory
+      that is dedicated for use by the GPU. In early 2007, computers with
+      integrated graphics account for about 90% of all PC shipments. They are
+      less costly to implement than dedicated graphics processing, but tend to
+      be less capable. Historically, integrated processing was considered unfit
+      to play 3D games or run graphically intensive programs but could run less
+      intensive programs such as Adobe Flash. Examples of such IGPs would be
+      offerings from SiS and VIA circa 2004. However, modern integrated graphics
+      processors such as AMD Accelerated Processing Unit and Intel HD Graphics
+      are more than capable of handling 2D graphics or low stress 3D graphics.
+      Since the GPU computations are extremely memory-intensive, integrated
+      processing may find itself competing with the CPU for the relatively slow
+      system RAM, as it has minimal or no dedicated video memory. IGPs can have
+      up to 29.856 GB/s of memory bandwidth from system RAM, whereas a graphics
+      card may have up to 264 GB/s of bandwidth between its RAM and GPU core.
+      This memory bus bandwidth can limit the performance of the GPU, though
+      multi-channel memory can mitigate this deficiency. Older integrated
+      graphics chipsets lacked hardware transform and lighting, but newer ones
+      include it.
+    </p>
+    <h2>External GPU (eGPU)</h2>
+    <p>
+      An external GPU is a graphics processor located outside of the housing of
+      the computer, similar to a large external hard drive. External graphics
+      processors are sometimes used with laptop computers. Laptops might have a
+      substantial amount of RAM and a sufficiently powerful central processing
+      unit (CPU), but often lack a powerful graphics processor, and instead have
+      a less powerful but more energy-efficient on-board graphics chip. On-board
+      graphics chips are often not powerful enough for playing video games, or
+      for other graphically intensive tasks, such as editing video or 3D
+      animation/rendering. Therefore, it is desirable to be able to attach a GPU
+      to some external bus of a notebook. PCI Express is the only bus used for
+      this purpose. The port may be, for example, an ExpressCard or mPCIe port
+      (PCIe ×1, up to 5 or 2.5 Gbit/s respectively) or a Thunderbolt 1, 2, or 3
+      port (PCIe ×4, up to 10, 20, or 40 Gbit/s respectively). Those ports are
+      only available on certain notebook systems. eGPU enclosures include their
+      own power supply (PSU), because powerful GPUs can easily consume hundreds
+      of watts. Official vendor support for external GPUs has gained traction
+      recently. One notable milestone was Apple's decision to officially support
+      external GPUs with MacOS High Sierra 10.13.4. There are also several major
+      hardware vendors (HP, Alienware, Razer) releasing Thunderbolt 3 eGPU
+      enclosures. This support has continued to fuel eGPU implementations by
+      enthusiasts.
+    </p>
+  </body>
+</html>
